@@ -1,6 +1,8 @@
 # Module: MMM-Snow
 Inspired by [NHubbard's Snow Plugin](https://github.com/nhubbard/MagicPlugins/tree/master/snow) I created a little more realistic snow plugin to improve your winter experience!
 
+![](.github/example.png)
+
 ## Installation
 
 In your terminal, go to your MagicMirror's Module folder:

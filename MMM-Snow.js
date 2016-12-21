@@ -36,8 +36,8 @@ Module.register("MMM-Snow",{
 
 			flake.appendChild(jiggle);
 			flake.style.left = ((Math.random() * 100) - 10) + "%";
-			flake.style.animationDelay = (Math.random() * 45) + "s";
-			flake.style.animationDuration = 50 - (Math.random() * 25 * size) + "s";
+			flake.style.animationDelay = (Math.random() * 100) + "s";
+			flake.style.animationDuration = 100 - (Math.random() * 50 * size) + "s";
 
 			wrapper.appendChild(flake);
 		}

@@ -20,7 +20,7 @@ Module.register("MMM-Snow",{
 		wrapper.className = "snow-wrapper"
 
 		var flake, jiggle, size;
-	
+
 		for(var i = 0; i < this.config.flakeCount; i++) {
 			flake = document.createElement("div")
 			flake.className = "snow-flake"

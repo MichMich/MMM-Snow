@@ -3,12 +3,28 @@
  *
  * By Michael Teeuw http://michaelteeuw.nl
  * MIT Licensed.
+ * 
+ * Comment on terminology: a 'flake' is any moving item being shown on the mirror, while
+ * the specific themed items are called 'snow' or 'heart'. This applies to variable names
+ * file names and css class names.
  */
 
 Module.register("MMM-Snow",{
 
 	defaults: {
-		flakeCount: 100
+		flakeCount: 100,
+		theme: "love"                 // pick from themes map below, i.e. winter, love
+	},
+
+	themes: {
+		"winter" : { 
+			"flakePrefix"  : "snow",    // prefix of css name, e.g. snow1 
+			"imagesCount"  : 3,         // number of images available in this theme, here:  snow1, snow2, snow3
+			"sizeFactor"   : 1},        // adapt size of flakes to your liking, use original flake size
+		"love"   : { 
+			"flakePrefix" : "heart",    // prefix of css name, e.g. heart1 
+			"imagesCount"  : 2,         // number of images in this theme, here:  heart1, heart2
+			"sizeFactor"   : 2}         // adapt size of flakes to your liking, we like bigger hearts
 	},
 
 	getStyles: function() {
@@ -16,21 +32,24 @@ Module.register("MMM-Snow",{
 	},
 
 	getDom: function() {
+		var themeSettings = this.themes[this.config.theme];
 		var wrapper = document.createElement("div")
-		wrapper.className = "snow-wrapper"
+		wrapper.className = "wrapper"
 
 		var flake, jiggle, size;
 
 		for(var i = 0; i < this.config.flakeCount; i++) {
 
-			size = (Math.random() * 0.75) + 0.25;
+			size = themeSettings.sizeFactor * (Math.random() * 0.75) + 0.25;
 			flakeImage = document.createElement("div")
-			flakeImage.className = "flake" + (Math.round(Math.random() * 2) + 1);
+			
+			var flakeSuffix = Math.round(1 + Math.random() * (themeSettings.imagesCount - 1));
+			flakeImage.className = themeSettings.flakePrefix + flakeSuffix;
 			flakeImage.style.transform = "scale(" + size +", "+size+")";
 			flakeImage.style.opacity = size;
 
 			flake = document.createElement("div");
-			flake.className = "snow-flake";
+			flake.className = "flake";
 
 			jiggle = document.createElement("div");
 			jiggle.style.animationDelay = (Math.random() * 4) + "s";

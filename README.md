@@ -72,7 +72,7 @@ Extend the `themes` map in the file `MMM-Snow.js`. Just add another entry
 ````javascript
 "bar"   : { 
 	"flakePrefix" : "foo",    
-	"imagesCount"  : 3,         // number of images in this theme, here:  heart1, heart2^
+	"imagesCount"  : 3,         // number of images in this theme, here:  foo1, foo2, foo3
 	"downwards"    : false,     // flakes move upwards from bottom to top
 	"sizeFactor"   : 2}         // adapt size of flakes to your liking, <1 smaller, =1 original, >1 larger 
 ````

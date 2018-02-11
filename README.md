@@ -72,10 +72,11 @@ Extend the `themes` map in the file `MMM-Snow.js`. Just add another entry
 ````javascript
 "bar"   : { 
 	"flakePrefix" : "foo",    
-	"imagesCount"  : 3,         // number of images in this theme, here:  heart1, heart2
-	"sizeFactor"   : 1}         // adapt size of flakes to your liking, we like bigger hearts
+	"imagesCount"  : 3,         // number of images in this theme, here:  heart1, heart2^
+	"downwards"    : false,     // flakes move upwards from bottom to top
+	"sizeFactor"   : 2}         // adapt size of flakes to your liking, <1 smaller, =1 original, >1 larger 
 ````
-The named index `bar` is the externally visible theme name, which has to be used in `config.js`. Setting `flakePrefix` tells how the image files and CSS classes are called; in our example it should be `foo`. `imagesCount` defines how many image files / css classes are there. If you have three images, put `3` which makes the module using `foo1`, `foo2`, and `foo3` respectively.  
+The named index `bar` is the externally visible theme name, which has to be used in `config.js`. Setting `flakePrefix` tells how the image files and CSS classes are called; in our example it should be `foo`. `imagesCount` defines how many image files / css classes are there. If you have three images, put `3` which makes the module using `foo1`, `foo2`, and `foo3` respectively. The boolean setting `downwards` defines the direction of flakes' movements; `true` means downwards and `true` means upwards. Setting `sizeFactor` makes the flake images larger or smaller; values between 0 and 1 makes the flake smaller, while values larger  than 1 enlarges them.
 
 ### Configure new theme
 To use the new theme, change the `theme` parameter for the `MMM-Snow` module in the `config/config.js` file:

@@ -20,10 +20,12 @@ Module.register("MMM-Snow",{
 		"winter" : { 
 			"flakePrefix"  : "snow",    // prefix of css name, e.g. snow1 
 			"imagesCount"  : 3,         // number of images available in this theme, here:  snow1, snow2, snow3
+			"downwards"    : true,      // direction of flake movements, snow goes downwards
 			"sizeFactor"   : 1},        // adapt size of flakes to your liking, use original flake size
 		"love"   : { 
 			"flakePrefix" : "heart",    // prefix of css name, e.g. heart1 
 			"imagesCount"  : 2,         // number of images in this theme, here:  heart1, heart2
+			"downwards"    : false,     // direction of flake movements, hearts raise upwards			
 			"sizeFactor"   : 2}         // adapt size of flakes to your liking, we like bigger hearts
 	},
 
@@ -45,11 +47,16 @@ Module.register("MMM-Snow",{
 			
 			var flakeSuffix = Math.round(1 + Math.random() * (themeSettings.imagesCount - 1));
 			flakeImage.className = themeSettings.flakePrefix + flakeSuffix;
-			flakeImage.style.transform = "scale(" + size +", "+size+")";
+			flakeImage.style.transform = "scale(" + size +", " + size + ")";
 			flakeImage.style.opacity = size;
 
 			flake = document.createElement("div");
-			flake.className = "flake";
+			if(themeSettings.downwards) {
+				flake.className = "flake-downwards";
+			}
+			else {
+				flake.className = "flake-upwards"
+			}
 
 			jiggle = document.createElement("div");
 			jiggle.style.animationDelay = (Math.random() * 4) + "s";
@@ -57,7 +64,7 @@ Module.register("MMM-Snow",{
 			jiggle.appendChild(flakeImage);
 
 			size = (Math.random() * 0.75) + 0.25;
-			jiggle.style.transform = "scale(" + size +", "+size+")";
+			jiggle.style.transform = "scale(" + size +", " + size + ")";
 			jiggle.style.opacity = size;
 
 			flake.appendChild(jiggle);

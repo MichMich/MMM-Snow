@@ -11,6 +11,10 @@ The module supports themes. Current themes are *winter* and *love*. The first on
 
 ![](.github/example-love.png)
 
+**Screenshot theme "water"**
+
+![](.github/example-water.png)
+
 ## Installation
 
 In your terminal, go to your MagicMirror's Module folder:
@@ -51,14 +55,14 @@ The following property can be configured:
 |Option|Description|
 |---|---|
 |`flakeCount`|The number of snow flakes. More flakes are havier for the cpu, so don't go wild. <br>**Default value:** `100`|
-|`theme`| Defines the type of "flakes". Possible values are `winter` and `love`.<br>**Default value:** `winter`|
+|`theme`| Defines the type of "flakes". Possible values are `winter`, `love`, and `water`.<br>**Default value:** `winter`|
 
 ## Defineing new themes
 
 Certainly, there are many opportunities for new themes. To extend this module with new themes takes three simple development steps.
 
 ### Add image files
-Add your "flake" images to folder `./images` in `MMM-Snow`directory. The image has to be a PNG with transparent background color. Make size of the file similar to existing files. The file names have to have a prefix followed by a number, e.g. `foo1.png`, `foo2.png`, `foo3.png`.
+Add your "flake" images to folder `./images` in `MMM-Snow`directory. The image has to be a PNG with transparent background color. Make size of the file similar to existing files (50x50). The file names have to have a prefix followed by a number, e.g. `foo1.png`, `foo2.png`, `foo3.png`.
 
 ### Reference images in CSS classes
 Create new CSS classes in `MMM-Snow.css`, which reference your images. Class name and file name n´have to be identical. 

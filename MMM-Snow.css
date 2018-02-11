@@ -30,6 +30,8 @@
 .MMM-Snow .heart1 {background-image: url('images/heart1.png');}
 .MMM-Snow .heart2 {background-image: url('images/heart2.png');}
 
+.MMM-Snow .bubble1 {background-image: url('images/bubble1.png');}
+
 @keyframes flake-downwards {
     from {transform: translateY(0vh)}
     to {transform: translateY(calc(100vh + 20px))}

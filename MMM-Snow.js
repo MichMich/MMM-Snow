@@ -26,7 +26,12 @@ Module.register("MMM-Snow",{
 			"flakePrefix" : "heart",    // prefix of css name, e.g. heart1 
 			"imagesCount"  : 2,         // number of images in this theme, here:  heart1, heart2
 			"downwards"    : false,     // direction of flake movements, hearts raise upwards			
-			"sizeFactor"   : 2}         // adapt size of flakes to your liking, we like bigger hearts
+			"sizeFactor"   : 2},        // adapt size of flakes to your liking, we like bigger hearts
+		"water"   : { 
+			"flakePrefix" : "bubble",   // prefix of css name, e.g. bubble1 
+			"imagesCount"  : 1,         // number of images in this theme, here:  bubble1
+			"downwards"    : false,     // direction of flake movements, bubbles raise upwards			
+			"sizeFactor"   : 2}         // adapt size of flakes to your liking, we like bigger bubbles
 	},
 
 	getStyles: function() {

@@ -1,31 +1,48 @@
-.MMM-Snow .snow-flake {
+.MMM-Snow .flake-downwards {
     position: absolute;
-    top: -20px;
-    animation-name: snow-drop;
+    top: -50px;
+    animation-name: flake-downwards;
     animation-iteration-count: infinite;
 }
 
-.MMM-Snow .snow-flake div {
+.MMM-Snow .flake-upwards {
+    position: absolute;
+    top: -50px;
+    animation-name: flake-upwards;
+    animation-iteration-count: infinite;
+}
+
+.MMM-Snow *[class|="flake"] div {
     width: 20px;
     height: 20px;
 
     background-repeat: no-repeat;
     background-size: cover;
 
-    animation-name: snow-jiggle;
+    animation-name: flake-jiggle;
     animation-iteration-count: infinite;
 }
 
-.MMM-Snow .flake1 {background-image: url('images/flake1.png');}
-.MMM-Snow .flake2 {background-image: url('images/flake2.png');}
-.MMM-Snow .flake3 {background-image: url('images/flake3.png');}
+.MMM-Snow .snow1 {background-image: url('images/snow1.png');}
+.MMM-Snow .snow2 {background-image: url('images/snow2.png');}
+.MMM-Snow .snow3 {background-image: url('images/snow3.png');}
 
-@keyframes snow-drop {
+.MMM-Snow .heart1 {background-image: url('images/heart1.png');}
+.MMM-Snow .heart2 {background-image: url('images/heart2.png');}
+
+.MMM-Snow .bubble1 {background-image: url('images/bubble1.png');}
+
+@keyframes flake-downwards {
     from {transform: translateY(0vh)}
     to {transform: translateY(calc(100vh + 20px))}
 }
 
-@keyframes snow-jiggle {
+@keyframes flake-upwards {
+    from {transform: translateY(calc(100vh + 20px))}
+    to {transform: translateY(0vh)}
+}
+
+@keyframes flake-jiggle {
     0% {transform: translateX(0vw)}
     20% {transform: translateX(20vw)}
     30% {transform: translateX(5vw)}
